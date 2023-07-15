@@ -76,6 +76,9 @@
 		for (let link of links) {
 			link.addEventListener('click', titleClickHandler);
 		}
+
+		const firstLink = document.querySelector('.titles a');
+		firstLink.classList.add('active');
 	};
 	generateTitleLinks();
 }
