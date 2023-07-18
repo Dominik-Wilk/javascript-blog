@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 'use strict';
 
 {
@@ -41,6 +42,7 @@
 	const optArticleSelector = '.post';
 	const optTitleSelector = '.post-title';
 	const optTitleListSelector = '.titles';
+	// const optArticleTagsSelector = '.post-tags .list';
 
 	const generateTitleLinks = function () {
 		/* remove content from old list of links. */
@@ -82,3 +84,38 @@
 	};
 	generateTitleLinks();
 }
+
+const generateTags = function () {
+	const optArticleTagsSelector = '.post-tags .list';
+	/* find all articles */
+	const articlesList = document.querySelectorAll('article');
+	// console.log(articlesList);
+	/* START LOOP: for every article: */
+	for (let articleItem of articlesList) {
+		/* find tags wrapper */
+		let articleWrapper = articleItem.querySelector(optArticleTagsSelector);
+		// console.log(articleWrapper);
+		/* make html variable with empty string */
+		let stringHTML = '';
+		/* get tags from data-tags attribute */
+		const tagsList = articleItem.getAttribute('data-tags');
+		// console.log(tagsList);
+		/* split tags into array */
+		const tags = tagsList.split(' ');
+		// console.log(tags);
+		/* START LOOP: for each tag */
+		for (const tag of tags) {
+			/* generate HTML of the link */
+			const linkHTML = `<li><a href="#tag-${tag}">${tag}</a></li> `;
+			// console.log(linkHTML);
+			/* add generated code to html variable */
+			stringHTML = stringHTML + linkHTML;
+			/* END LOOP: for each tag */
+		}
+		/* insert HTML of all the links into the tags wrapper */
+		articleWrapper.insertAdjacentHTML('beforeend', stringHTML);
+		/* END LOOP: for every article: */
+	}
+};
+
+generateTags();
