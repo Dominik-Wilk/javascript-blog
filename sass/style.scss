@@ -87,6 +87,16 @@ body {
 		font-weight: bold;
 	}
 }
+.list.titles {
+	a {
+		transition: all 0.5s;
+	}
+	a.active {
+		position: relative;
+		left: 15px;
+		font-size: 30px;
+	}
+}
 
 a {
 	text-decoration: none;
@@ -136,6 +146,50 @@ a {
 	display: flex;
 	p {
 		margin: 0 10px 0 0;
+	}
+}
+
+.sidebar {
+	.list.tags,
+	.list.authors {
+		li {
+			font-size: 70px;
+			display: inline-block;
+			line-height: 0.5;
+			margin: 0 5px;
+
+			a.tag-size-5,
+			.author-size-5 {
+				font-size: 100%;
+				color: limegreen;
+			}
+			a.tag-size-4,
+			.author-size-4 {
+				font-size: 65%;
+				color: purple;
+			}
+			a.tag-size-3,
+			.author-size-3 {
+				font-size: 45%;
+				color: red;
+			}
+			a.tag-size-2,
+			.author-size-2 {
+				font-size: 30%;
+				color: blue;
+			}
+			a.tag-size-1,
+			.author-size-1 {
+				font-size: 20%;
+				color: brown;
+			}
+		}
+	}
+	.list.authors li {
+		margin: 10px 0;
+		a {
+			line-height: 1;
+		}
 	}
 }
 
