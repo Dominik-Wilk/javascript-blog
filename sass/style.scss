@@ -136,9 +136,6 @@ a {
 .post-author {
   font-style: italic;
   list-style: none;
-  // a.active {
-  //   font-weight: bold;
-  // }
 }
 
 .post-title {
@@ -154,8 +151,7 @@ a {
 }
 
 .sidebar {
-  .list.tags,
-  .list.authors {
+  .list.tags {
     li {
       font-size: 70px;
       display: inline-block;
@@ -187,12 +183,6 @@ a {
         font-size: 20%;
         color: brown;
       }
-    }
-  }
-  .list.authors li {
-    margin: 10px 0;
-    a {
-      line-height: 1;
     }
   }
 }

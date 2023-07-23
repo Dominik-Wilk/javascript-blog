@@ -164,7 +164,7 @@ const templates = {
         // const linkHTML = `<li><a href="#tag-${tag}">${tag}</a></li> `;
         // console.log(linkHTML);
 
-        const linkHTMLData = { id: tag, title: tag };
+        const linkHTMLData = { id: tag };
         const linkHTML = templates.tagLink(linkHTMLData);
 
         /* add generated code to html variable */
